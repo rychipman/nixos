@@ -84,9 +84,19 @@
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
 
-  # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager = {
+    xterm.enable = false;
+  };
+
+  services.xserver.displayManager.defaultSession = "none+i3";
+
+  services.xserver.windowManager.i3 = {
+    enable = true;
+    extraPackages = with pkgs; [
+      dmenu i3status i3lock i3blocks
+    ];
+  };
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.jane = {
