@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -46,7 +48,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget vim emacs git
+    wget vim emacs git stow xcape xorg.xmodmap lxterminal slack firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -96,6 +98,10 @@
       dmenu i3status i3lock i3blocks
     ];
   };
+
+  fonts.fonts = with pkgs; [
+    source-code-pro
+  ];
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
