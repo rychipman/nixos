@@ -1,0 +1,1 @@
+/root/nix-home/home.nix
