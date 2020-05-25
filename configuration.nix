@@ -90,7 +90,7 @@
     xterm.enable = false;
   };
 
-  services.xserver.displayManager.defaultSession = "none+i3";
+  services.xserver.displayManager.startx.enable = true;
 
   services.xserver.windowManager.i3 = {
     enable = true;
