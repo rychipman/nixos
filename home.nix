@@ -1,1 +1,1 @@
-/root/nix-home/home.nix
+/home/ryanix/nix-home/home.nix

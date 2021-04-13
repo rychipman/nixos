@@ -106,11 +106,11 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ryan = {
+  users.users.ryanix = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
-  home-manager.users.ryan = import ./home.nix;
+  home-manager.users.ryanix = import ./home.nix;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
